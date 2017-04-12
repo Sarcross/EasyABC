@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Snowfall</string>
+
+    <string name="login_username_edit_text">User Name</string>
+    <string name="login_password_edit_text">Password</string>
+    <string name="login_login_button">LOG IN</string>
+    <string name="login_register_button">REGISTER</string>
+</resources>
