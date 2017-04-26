@@ -5,4 +5,17 @@
     <string name="login_password_edit_text">Password</string>
     <string name="login_login_button">LOG IN</string>
     <string name="login_register_button">REGISTER</string>
+
+    <string name="add_student_first_name_edit_text">First Name</string>
+    <string name="add_student_teacher_name_edit_text">Teacher</string>
+    <string name="add_student_parent_name_edit_text">Parent</string>
+    <string name="add_student_last_name_edit_text">Last Name</string>
+    <string name="add_student_school_edit_text">School</string>
+    <string name="add_student_DOB_TextView">Date of Birth</string>
+    <string name="add_student_grade_level_TextView">Grade Level</string>
+    <string name="add_student_add_button">Add</string>
+
+    <string name="observation_start_observation_button">Start Observation</string>
+    <string name="observation_end_observation_button">End Observation</string>
+
 </resources>
