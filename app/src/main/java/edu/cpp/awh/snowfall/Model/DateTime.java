@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.Model;
+package edu.cpp.awh.snowfall.model;
 
 public class DateTime {
     private int day;

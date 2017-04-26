@@ -1,14 +1,50 @@
-package edu.cpp.awh.snowfall.Model;
+package edu.cpp.awh.snowfall.model;
 
+import com.j256.ormlite.field.DataType;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+import java.util.Date;
+
+@DatabaseTable(tableName = "students")
 public class Student {
+    @DatabaseField(generatedId = true)
+    private Integer id;
+    @DatabaseField
     private String firstName;
-    private char middleInitial;
+    @DatabaseField
     private String lastName;
+    @DatabaseField
+    private String teacherName;
+    @DatabaseField
+    private String parentName;
+    @DatabaseField(dataType = DataType.DATE_TIME)
+    private Date dateOfBirth;
+    @DatabaseField
+    private GradeLevel gradeLevel;
+    @DatabaseField
+    private String school;
 
-    private DateTime dateOfBirth;
+    public enum GradeLevel
+    {
+        TK,
+        K,
+        G1,
+        G2,
+        G3,
+        G4,
+        G5,
+        G6,
+        G7,
+        G8,
+        G9,
+        G10,
+        G11,
+        G12
+    }
 
     public Student() {
-        dateOfBirth = new DateTime();
+
     }
 
     public Student withFirstName(String fn) {
@@ -21,14 +57,37 @@ public class Student {
         return this;
     }
 
-    public Student withMiddleInitial(String mi) {
-        this.middleInitial = mi.charAt(0);
+    public Student withDOB(Date date) {
+        dateOfBirth = date;
         return this;
     }
 
-    public Student withMiddleInitial(char mi) {
-        this.middleInitial = mi;
+    public Student withGradeLevel(GradeLevel gl) {
+        this.gradeLevel = gl;
         return this;
+    }
+
+    public Student withSchool(String sch) {
+        this.school = sch;
+        return this;
+    }
+
+    public Student withTeacher(String t) {
+        this.teacherName = t;
+        return this;
+    }
+
+    public Student withParent(String p) {
+        this.parentName = p;
+        return this;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -39,14 +98,6 @@ public class Student {
         this.firstName = firstName;
     }
 
-    public char getMiddleInitial() {
-        return middleInitial;
-    }
-
-    public void setMiddleInitial(char middleInitial) {
-        this.middleInitial = middleInitial;
-    }
-
     public String getLastName() {
         return lastName;
     }
@@ -55,11 +106,43 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public DateTime getDateOfBirth() {
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(DateTime dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public GradeLevel getGradeLevel() {
+        return gradeLevel;
+    }
+
+    public void setGradeLevel(GradeLevel gradeLevel) {
+        this.gradeLevel = gradeLevel;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
     }
 }
