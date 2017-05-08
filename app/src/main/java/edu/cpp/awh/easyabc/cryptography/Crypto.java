@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.cryptography;
+package edu.cpp.awh.easyabc.cryptography;
 
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;

@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.model;
+package edu.cpp.awh.easyabc.model;
 
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
@@ -9,7 +9,7 @@ import java.util.Date;
 @DatabaseTable(tableName = "students")
 public class Student {
     @DatabaseField(generatedId = true)
-    private Integer id;
+    private int id;
     @DatabaseField
     private String firstName;
     @DatabaseField
@@ -82,11 +82,11 @@ public class Student {
         return this;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -144,5 +144,40 @@ public class Student {
 
     public void setSchool(String school) {
         this.school = school;
+    }
+
+    public String getGradeLevelString() {
+        switch(gradeLevel)
+        {
+            case TK:
+                return "TK";
+            case K:
+                return "K";
+            case G1:
+                return "1";
+            case G2:
+                return "2";
+            case G3:
+                return "3";
+            case G4:
+                return "4";
+            case G5:
+                return "5";
+            case G6:
+                return "6";
+            case G7:
+                return "7";
+            case G8:
+                return "8";
+            case G9:
+                return "9";
+            case G10:
+                return "10";
+            case G11:
+                return "11";
+            case G12:
+                return "12";
+        }
+        return "Error - Grade Not Found";
     }
 }

@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.util;
+package edu.cpp.awh.easyabc.util;
 
 public abstract class Logging {
     //Tags

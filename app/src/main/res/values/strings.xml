@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Snowfall</string>
+    <string name="app_name">EasyABC</string>
 
     <string name="login_username_edit_text">User Name</string>
     <string name="login_password_edit_text">Password</string>
@@ -17,5 +17,19 @@
 
     <string name="observation_start_observation_button">Start Observation</string>
     <string name="observation_end_observation_button">End Observation</string>
+
+    <string name="loginFragment_username_EditText">Username</string>
+    <string name="loginFragment_password_EditText">Password</string>
+    <string name="loginFragment_register_Button">Register</string>
+    <string name="loginFragment_login_Button">Login</string>
+
+    <string name="addStudentFragment_first_name_EditText">First Name</string>
+    <string name="addStudentFragment_last_name_EditText">Last Name</string>
+    <string name="addStudentFragment_teacher_EditText">Teacher</string>
+    <string name="addStudentFragment_parent_EditText">Parent / Guardian</string>
+    <string name="addStudentFragment_DOB_TextView">Date of Birth</string>
+    <string name="addStudentFragment_grade_level_TextView">Grade</string>
+    <string name="addStudentFragment_school_EditText">School</string>
+    <string name="addStudentFragment_add_Button">Add</string>
 
 </resources>

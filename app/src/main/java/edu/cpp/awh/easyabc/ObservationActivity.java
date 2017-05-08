@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall;
+package edu.cpp.awh.easyabc;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 import java.util.Date;
 
-import edu.cpp.awh.snowfall.model.ActivityBundle;
+import edu.cpp.awh.easyabc.model.ActivityBundle;
 
 public class ObservationActivity extends AppCompatActivity implements UI {
     private Button startObservationButton;

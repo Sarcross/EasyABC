@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall;
+package edu.cpp.awh.easyabc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import edu.cpp.awh.snowfall.cryptography.Crypto;
-import edu.cpp.awh.snowfall.util.Logging;
+import edu.cpp.awh.easyabc.cryptography.Crypto;
+import edu.cpp.awh.easyabc.util.Logging;
 
 public class LoginActivity extends AppCompatActivity implements UI{
 

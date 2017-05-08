@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.model;
+package edu.cpp.awh.easyabc.model;
 
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
@@ -9,7 +9,7 @@ import java.util.Date;
 @DatabaseTable(tableName = "activityBundle")
 public class ActivityBundle {
     @DatabaseField(generatedId = true)
-    private Integer id;
+    private int id;
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private Student student;
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
@@ -77,11 +77,11 @@ public class ActivityBundle {
 
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

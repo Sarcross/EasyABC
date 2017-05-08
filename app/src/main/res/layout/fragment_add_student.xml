@@ -12,27 +12,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <EditText
-            android:id="@+id/addStudentActivity_FirstName_EditText"
+            android:id="@+id/addStudentFragment_FirstName_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/add_student_first_name_edit_text" />
+            android:hint="@string/addStudentFragment_first_name_EditText" />
         <EditText
-            android:id="@+id/addStudentActivity_LastName_EditText"
+            android:id="@+id/addStudentFragment_LastName_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/add_student_last_name_edit_text" />
+            android:hint="@string/addStudentFragment_last_name_EditText" />
 
         <EditText
-            android:id="@+id/addStudentActivity_TeacherName_EditText"
+            android:id="@+id/addStudentFragment_Teacher_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/add_student_teacher_name_edit_text" />
+            android:hint="@string/addStudentFragment_teacher_EditText" />
 
         <EditText
-            android:id="@+id/addStudentActivity_ParentName_EditText"
+            android:id="@+id/addStudentFragment_Parent_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/add_student_parent_name_edit_text" />
+            android:hint="@string/addStudentFragment_parent_EditText" />
 
         <LinearLayout
             android:padding="5dp"
@@ -41,10 +41,10 @@
             android:orientation="vertical">
             <!-- Date of Birth Label -->
             <TextView
-                android:id="@+id/add_student_DOB_TextView"
+                android:id="@+id/addStudentFragment_DOB_TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_student_DOB_TextView" />
+                android:text="@string/addStudentFragment_DOB_TextView" />
             <!-- Date Picker -->
         </LinearLayout>
 
@@ -55,23 +55,23 @@
             android:orientation="vertical">
             <!-- Grade Level Label -->
             <TextView
-                android:id="@+id/add_student_grade_level_TextView"
+                android:id="@+id/addStudentFragment_grade_level_TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_student_grade_level_TextView" />
+                android:text="@string/addStudentFragment_grade_level_TextView" />
             <!-- Grade Level -->
         </LinearLayout>
 
         <EditText
-            android:id="@+id/addStudentActivity_school_EditText"
+            android:id="@+id/addStudentFragment_School_EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/add_student_school_edit_text" />
+            android:hint="@string/addStudentFragment_school_EditText" />
         <Button
-            android:id="@+id/addStudentActivity_add_button"
+            android:id="@+id/addStudentFragment_add_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add_student_add_button"
+            android:text="@string/addStudentFragment_add_Button"
             android:layout_gravity="end" />
     </LinearLayout>
 

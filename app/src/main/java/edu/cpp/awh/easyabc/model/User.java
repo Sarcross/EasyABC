@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.model;
+package edu.cpp.awh.easyabc.model;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -6,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "users")
 public class User {
     @DatabaseField(generatedId = true)
-    private Integer id;
+    private int id;
     @DatabaseField
     private String name;
     @DatabaseField
@@ -48,4 +48,11 @@ public class User {
         this.password = password;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

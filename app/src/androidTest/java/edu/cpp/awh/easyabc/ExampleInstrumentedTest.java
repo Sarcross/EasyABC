@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall;
+package edu.cpp.awh.easyabc;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("edu.cpp.awh.snowfall", appContext.getPackageName());
+        assertEquals("edu.cpp.awh.easyabc", appContext.getPackageName());
     }
 }

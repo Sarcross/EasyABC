@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall.data;
+package edu.cpp.awh.easyabc.data;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,15 +11,15 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
-import edu.cpp.awh.snowfall.R;
-import edu.cpp.awh.snowfall.model.ActivityBundle;
-import edu.cpp.awh.snowfall.model.Observation;
-import edu.cpp.awh.snowfall.model.Student;
-import edu.cpp.awh.snowfall.model.User;
+import edu.cpp.awh.easyabc.R;
+import edu.cpp.awh.easyabc.model.ActivityBundle;
+import edu.cpp.awh.easyabc.model.Observation;
+import edu.cpp.awh.easyabc.model.Student;
+import edu.cpp.awh.easyabc.model.User;
 
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
-    private static final String DATABASE_NAME = "snowfall.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "easyabc.db";
+    private static final int DATABASE_VERSION = 2;
 
     private Dao<Student, Integer> studentDao;
     private Dao<Observation, Integer> observationDao;
@@ -34,10 +34,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try
         {
-            TableUtils.createTable(connectionSource, Student.class);
-            TableUtils.createTable(connectionSource, Observation.class);
-            TableUtils.createTable(connectionSource, ActivityBundle.class);
-            TableUtils.createTable(connectionSource, User.class);
+            TableUtils.createTableIfNotExists(connectionSource, Student.class);
+            TableUtils.createTableIfNotExists(connectionSource, Observation.class);
+            TableUtils.createTableIfNotExists(connectionSource, ActivityBundle.class);
+            TableUtils.createTableIfNotExists(connectionSource, User.class);
         }
         catch(SQLException e)
         {
@@ -60,5 +60,40 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         {
             Log.e(DatabaseHelper.class.getName(), "Unable to upgrade database from version " + oldVersion + " to new " + newVersion, e);
         }
+    }
+
+    public Dao<Student, Integer> getStudentDao() throws SQLException{
+        if(studentDao == null)
+            studentDao = getDao(Student.class);
+        return studentDao;
+    }
+
+    public Dao<Observation, Integer> getObservationDao() throws SQLException {
+        if(observationDao == null)
+            observationDao = getDao(Observation.class);
+        return observationDao;
+    }
+
+    public Dao<ActivityBundle, Integer> getActivityBundleDao() throws SQLException {
+        if(activityBundleDao == null)
+            activityBundleDao = getDao(ActivityBundle.class);
+        return activityBundleDao;
+    }
+
+    public Dao<User, Integer> getUserDao() throws SQLException {
+        if(userDao == null)
+            userDao = getDao(User.class);
+        return userDao;
+    }
+
+    @Override
+    public void close() {
+
+        studentDao = null;
+        observationDao = null;
+        activityBundleDao = null;
+        userDao = null;
+
+        super.close();
     }
 }

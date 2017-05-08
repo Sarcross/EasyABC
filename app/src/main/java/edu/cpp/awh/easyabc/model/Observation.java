@@ -1,7 +1,8 @@
-package edu.cpp.awh.snowfall.model;
+package edu.cpp.awh.easyabc.model;
 
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.ArrayList;
@@ -11,9 +12,10 @@ import java.util.Date;
 @DatabaseTable(tableName = "observations")
 public class Observation {
     @DatabaseField(generatedId = true)
-    private Integer id;
+    private int id;
     @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
     private Student student;
+    @ForeignCollectionField(eager = true)
     private ArrayList<ActivityBundle> activityBundleList;
     @DatabaseField
     private String location;
@@ -64,5 +66,33 @@ public class Observation {
 
     public void setObservationEnd(Date observationEnd) {
         this.observationEnd = observationEnd;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Observation withLocation(String loc) {
+        this.location = loc;
+        return this;
+    }
+
+    public Observation withObservationStart(Date d) {
+        this.observationStart = d;
+        return this;
+    }
+
+    public Observation withStudent(Student s) {
+        this.student = s;
+        return this;
+    }
+
+    public Observation withObservationEnd(Date d) {
+        this.observationEnd = d;
+        return this;
     }
 }

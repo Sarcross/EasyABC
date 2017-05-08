@@ -1,4 +1,4 @@
-package edu.cpp.awh.snowfall;
+package edu.cpp.awh.easyabc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import edu.cpp.awh.snowfall.util.Logging;
+import edu.cpp.awh.easyabc.util.Logging;
 
 public class AddStudentActivity extends AppCompatActivity implements UI{
     private Button addStudentButton;
