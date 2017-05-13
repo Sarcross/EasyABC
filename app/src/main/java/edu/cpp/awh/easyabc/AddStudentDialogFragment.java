@@ -3,16 +3,20 @@ package edu.cpp.awh.easyabc;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 
-/**
- * Created by antzy_000 on 4/26/2017.
- */
+import java.util.Date;
+
+import edu.cpp.awh.easyabc.model.Student;
 
 public class AddStudentDialogFragment extends DialogFragment{
     private EditText firstNameEditText;
@@ -20,6 +24,8 @@ public class AddStudentDialogFragment extends DialogFragment{
     private EditText teacherEditText;
     private EditText parentEditText;
     private EditText schoolEditText;
+    private Spinner gradeSpinner;
+    private DatePicker dateOfBirthDatePicker;
 
     private Button addButton;
     public AddStudentDialogFragment() {
@@ -49,16 +55,30 @@ public class AddStudentDialogFragment extends DialogFragment{
         teacherEditText = (EditText) view.findViewById(R.id.addStudentFragment_Teacher_EditText);
         parentEditText = (EditText) view.findViewById(R.id.addStudentFragment_Parent_EditText);
         schoolEditText = (EditText) view.findViewById(R.id.addStudentFragment_School_EditText);
+        gradeSpinner = (Spinner) view.findViewById(R.id.addStudentFragment_grade_Spinner);
+        dateOfBirthDatePicker = (DatePicker) view.findViewById(R.id.addStudentFragment_DOB_Spinner);
+
 
         addButton = (Button) view.findViewById(R.id.addStudentFragment_add_Button);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("GradeLevel", gradeSpinner.getSelectedItem().toString());
+                Student s = new Student().withFirstName(firstNameEditText.getText().toString())
+                        .withLastName(lastNameEditText.getText().toString())
+                        .withTeacher(teacherEditText.getText().toString())
+                        .withParent(parentEditText.getText().toString())
+                        .withSchool(schoolEditText.getText().toString())
+                        .withDOB(new Date(dateOfBirthDatePicker.getYear(), dateOfBirthDatePicker.getMonth(), dateOfBirthDatePicker.getDayOfMonth()))
+                        .withGradeLevel(Student.gradeLevelFromString(gradeSpinner.getSelectedItem().toString()));
+
+                MainActivity.user.getStudentList().add(s);
+                ((BaseAdapter) MainActivity.getStudentListView().getAdapter()).notifyDataSetChanged();
                 AddStudentDialogFragment.this.dismiss();
             }
         });
 
-        String title = getArguments().getString("title", "Login");
+        String title = getArguments().getString("title", "Add Student");
         getDialog().setTitle(title);
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }

@@ -9,31 +9,44 @@
     tools:context="edu.cpp.awh.easyabc.ObservationActivity">
 
     <LinearLayout
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/observationActivity_start_observation_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/observation_start_observation_button"/>
-        <Button
-            android:id="@+id/observationActivity_end_observation_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/observation_end_observation_button"/>
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/observationActivity_start_observation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/observation_start_observation_button"/>
+            <Button
+                android:id="@+id/observationActivity_end_observation_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/observation_end_observation_button"/>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/observationActivity_activityBundle_ListView"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
     </LinearLayout>
 
-    <ListView
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ListView>
-
-
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/observationActivity_addActivityBundle_FAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:tint="@color/white"
+        android:src="@android:drawable/ic_input_add" />
 </RelativeLayout>

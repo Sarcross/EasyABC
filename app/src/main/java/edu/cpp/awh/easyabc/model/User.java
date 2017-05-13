@@ -1,23 +1,20 @@
 package edu.cpp.awh.easyabc.model;
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+import java.util.ArrayList;
 
-@DatabaseTable(tableName = "users")
 public class User {
-    @DatabaseField(generatedId = true)
-    private int id;
-    @DatabaseField
     private String name;
-    @DatabaseField
     private String password;
+    private ArrayList<Student> studentList;
 
     public User() {
         this.name = "";
         this.password = "";
+        studentList = new ArrayList<>();
     }
 
     public User(String n, String p) {
+        this();
         this.name = n;
         this.password = p;
     }
@@ -48,11 +45,11 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
-        return id;
+    public ArrayList<Student> getStudentList() {
+        return studentList;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setStudentList(ArrayList<Student> studentList) {
+        this.studentList = studentList;
     }
 }

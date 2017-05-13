@@ -1,31 +1,19 @@
 package edu.cpp.awh.easyabc.model;
 
-import com.j256.ormlite.field.DataType;
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
-import com.j256.ormlite.table.DatabaseTable;
-
 import java.util.ArrayList;
 import java.util.Date;
 
-
-@DatabaseTable(tableName = "observations")
 public class Observation {
-    @DatabaseField(generatedId = true)
-    private int id;
-    @DatabaseField(canBeNull = false, foreign = true, foreignAutoRefresh = true)
-    private Student student;
-    @ForeignCollectionField(eager = true)
     private ArrayList<ActivityBundle> activityBundleList;
-    @DatabaseField
     private String location;
-    @DatabaseField(dataType = DataType.DATE)
+    private String notes;
     private Date observationStart;
-    @DatabaseField(dataType = DataType.DATE)
     private Date observationEnd;
 
     public Observation() {
-
+        activityBundleList = new ArrayList<>();
+        observationStart = new Date();
+        observationEnd = new Date();
     }
 
     public ArrayList<ActivityBundle> getActivityBundleList() {
@@ -52,14 +40,6 @@ public class Observation {
         this.observationStart = observationStart;
     }
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
     public Date getObservationEnd() {
         return observationEnd;
     }
@@ -68,12 +48,12 @@ public class Observation {
         this.observationEnd = observationEnd;
     }
 
-    public int getId() {
-        return id;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     public Observation withLocation(String loc) {
@@ -83,11 +63,6 @@ public class Observation {
 
     public Observation withObservationStart(Date d) {
         this.observationStart = d;
-        return this;
-    }
-
-    public Observation withStudent(Student s) {
-        this.student = s;
         return this;
     }
 

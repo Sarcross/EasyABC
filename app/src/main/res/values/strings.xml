@@ -28,8 +28,83 @@
     <string name="addStudentFragment_teacher_EditText">Teacher</string>
     <string name="addStudentFragment_parent_EditText">Parent / Guardian</string>
     <string name="addStudentFragment_DOB_TextView">Date of Birth</string>
-    <string name="addStudentFragment_grade_level_TextView">Grade</string>
+    <string name="addStudentFragment_grade_Spinner">Grade</string>
     <string name="addStudentFragment_school_EditText">School</string>
     <string name="addStudentFragment_add_Button">Add</string>
 
+    <string name="addActivityBundleFragment_topic_EditText">Topic</string>
+    <string name="addActivityBundleFragment_activity_TextView">Activity</string>
+    <string name="addActivityBundleFragment_antecedent_TextView">Antecedent</string>
+    <string name="addActivityBundleFragment_behavior_TextView">Behavior</string>
+    <string name="addActivityBundleFragment_consequence_TextView">Consequence</string>
+    <string name="addActivityBundleFragment_consequence_other_EditText">Consequence description</string>
+    <string name="addActivityBundleFragment_add_Button">Add</string>
+
+    <string name="activityBundleListView_A_TextView">A: </string>
+    <string name="activityBundleListView_B_TextView">B: </string>
+    <string name="activityBundleListView_C_TextView">C: </string>
+
+
+    <string-array name="grade_name_arrays">
+        <item>TK</item>
+        <item>K</item>
+        <item>Grade 1</item>
+        <item>Grade 2</item>
+        <item>Grade 3</item>
+        <item>Grade 4</item>
+        <item>Grade 5</item>
+        <item>Grade 6</item>
+        <item>Grade 7</item>
+        <item>Grade 8</item>
+        <item>Grade 9</item>
+        <item>Grade 10</item>
+        <item>Grade 11</item>
+        <item>Grade 12</item>
+    </string-array>
+
+    <string-array name="task_arrays">
+        <item>Large Group - Desk</item>
+        <item>Large Group - Carpet</item>
+        <item>Small Group</item>
+        <item>Centers</item>
+        <item>Independent Work</item>
+        <item>Unstructured Time</item>
+    </string-array>
+
+    <string-array name="antecedent_arrays">
+        <item>Given Instruction</item>
+        <item>Alone (No Attention)</item>
+        <item>Peer Provoke</item>
+        <item>Engaged in Preferred Activity</item>
+        <item>Preferred Activity Removed</item>
+        <item>Transition</item>
+        <item>Sensor Conflict</item>
+    </string-array>
+
+    <string-array name="behavior_arrays">
+        <item>Talking Out</item>
+        <item>Off Task</item>
+        <item>Physical Aggression</item>
+        <item>Verbal Aggression</item>
+        <item>Elopement</item>
+        <item>Tantrum / Meltdown</item>
+        <item>Theft</item>
+        <item>Harassment / Teasing / Bullying</item>
+        <item>Property Damage</item>
+        <item>Crawling on the Floor</item>
+        <item>Wandering Room</item>
+        <item>Eating Non-Food Items</item>
+        <item>Noncompliance</item>
+    </string-array>
+
+    <string-array name="consequence_arrays">
+        <item>Adult Attention</item>
+        <item>Peer Attention</item>
+        <item>Got Preferred Activity / Item</item>
+        <item>Sensory Needs Met</item>
+        <item>Ignored</item>
+        <item>Avoided Task / Activity</item>
+        <item>Required to Continue</item>
+        <item>Other</item>
+    </string-array>
 </resources>

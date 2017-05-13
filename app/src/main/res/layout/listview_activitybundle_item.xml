@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+    <TextView
+        android:id="@+id/activityBundleListView_topic_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/activityBundleListView_A_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/activityBundleListView_A_TextView"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/activityBundleListView_antecedent_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/activityBundleListView_B_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/activityBundleListView_B_TextView"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/activityBundleListView_behavior_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/activityBundleListView_C_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/activityBundleListView_C_TextView"
+            android:layout_gravity="center" />
+        <TextView
+            android:id="@+id/activityBundleListView_consequence_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

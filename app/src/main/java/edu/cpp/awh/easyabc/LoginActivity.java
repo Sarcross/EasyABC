@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import edu.cpp.awh.easyabc.cryptography.Crypto;
 import edu.cpp.awh.easyabc.util.Logging;
 
 public class LoginActivity extends AppCompatActivity implements UI{
@@ -52,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements UI{
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!LoginActivity.this.verifyCredentials(usernameEditText.getText().toString(), Crypto.getHash(passwordEditText.getText().toString()))) {
+                if(!LoginActivity.this.verifyCredentials(usernameEditText.getText().toString(), passwordEditText.getText().toString())) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     Bundle b = new Bundle();
                     startActivity(intent);

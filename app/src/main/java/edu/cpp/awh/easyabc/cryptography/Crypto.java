@@ -1,97 +1,90 @@
 package edu.cpp.awh.easyabc.cryptography;
 
+import android.util.Base64;
+
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
-import java.security.MessageDigest;
+import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.SecretKeySpec;
 
 public abstract class Crypto {
     public static final String AES = "AES";
+    public static final int KEY_SIZE = 128;
 
-    public static String getHash(String plain) {
+    public static String encrypt(String plainText, String k) {
+
         try
         {
-            MessageDigest md  = MessageDigest.getInstance("MD5");
-            md.update(plain.getBytes(StandardCharsets.UTF_8));
-            return new String(md.digest(), StandardCharsets.UTF_8);
+            KeyGenerator keyGenerator =  KeyGenerator.getInstance(AES);
+            keyGenerator.init(KEY_SIZE);
+            Key key = keyGenerator.generateKey();
+            Cipher aesCipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            aesCipher.init(Cipher.ENCRYPT_MODE, key);
+            byte[] plainTextBytes = plainText.getBytes(StandardCharsets.UTF_8);
+            byte[] cipherText = aesCipher.doFinal(Base64.encode(plainTextBytes, Base64.DEFAULT));
+            return new String(cipherText, StandardCharsets.UTF_8);
         }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return "";
-        }
-
-    }
-
-    public static String encrypt(String plain, String k) {
-        try
-        {
-            byte[] key = k.getBytes();
-            byte[] ciph = plain.getBytes();
-
-            Cipher c = Cipher.getInstance(AES);
-            SecretKeySpec spec = new SecretKeySpec(key, AES);
-            c.init(Cipher.ENCRYPT_MODE, spec);
-            byte[] encryptedData = c.doFinal(ciph);
-
-            return encryptedData.toString();
-        }
-        catch(NoSuchPaddingException e)
+        catch (NoSuchAlgorithmException e)
         {
             e.printStackTrace();
-            return "";
         }
-        catch(InvalidKeyException e)
+        catch (BadPaddingException e)
         {
             e.printStackTrace();
-            return "";
-        } catch (BadPaddingException e) {
+        }
+        catch (IllegalBlockSizeException e)
+        {
             e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
+        }
+        catch (NoSuchPaddingException e)
+        {
             e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
+        }
+        catch (InvalidKeyException e)
+        {
             e.printStackTrace();
         }
         return "";
     }
 
-    public static String decrypt(String cipher, String key) {
+    public static String decrypt(String cipherText, String k) {
         try
         {
-            Cipher c = Cipher.getInstance(AES);
-            SecretKeySpec k = new SecretKeySpec(key.getBytes(), AES);
-            c.init(Cipher.DECRYPT_MODE, k);
-            return c.doFinal(cipher.getBytes()).toString();
+            KeyGenerator keyGenerator =  KeyGenerator.getInstance(AES);
+            keyGenerator.init(KEY_SIZE);
+            Key key = keyGenerator.generateKey();
+            Cipher aesCipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+            aesCipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] cipherTextBytes = cipherText.getBytes(StandardCharsets.UTF_8);
+            byte[] plainText = aesCipher.doFinal(Base64.decode(cipherTextBytes, Base64.DEFAULT));
+            return new String(plainText, StandardCharsets.UTF_8);
         }
-        catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return "";
-        }
-        catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-            return "";
-        }
-        catch (BadPaddingException e) {
+        catch (NoSuchAlgorithmException e)
+        {
             e.printStackTrace();
         }
-        catch (IllegalBlockSizeException e) {
+        catch (BadPaddingException e)
+        {
             e.printStackTrace();
         }
-        catch (InvalidKeyException e) {
+        catch (IllegalBlockSizeException e)
+        {
             e.printStackTrace();
         }
-
+        catch (NoSuchPaddingException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InvalidKeyException e)
+        {
+            e.printStackTrace();
+        }
         return "";
-    }
-
-    public static void clearCharArray(char[] arr) {
-        for(int ndx = 0; ndx < arr.length; ndx++) {
-            arr[ndx] = '\0';
-        }
     }
 }

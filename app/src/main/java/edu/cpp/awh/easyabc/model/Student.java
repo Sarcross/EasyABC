@@ -1,29 +1,21 @@
 package edu.cpp.awh.easyabc.model;
 
-import com.j256.ormlite.field.DataType;
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
 import java.util.Date;
 
-@DatabaseTable(tableName = "students")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
-    @DatabaseField(generatedId = true)
-    private int id;
-    @DatabaseField
     private String firstName;
-    @DatabaseField
     private String lastName;
-    @DatabaseField
     private String teacherName;
-    @DatabaseField
     private String parentName;
-    @DatabaseField(dataType = DataType.DATE_TIME)
     private Date dateOfBirth;
-    @DatabaseField
     private GradeLevel gradeLevel;
-    @DatabaseField
     private String school;
+
+    private ArrayList<Observation> observationList;
 
     public enum GradeLevel
     {
@@ -44,7 +36,7 @@ public class Student {
     }
 
     public Student() {
-
+        observationList = new ArrayList<>();
     }
 
     public Student withFirstName(String fn) {
@@ -80,14 +72,6 @@ public class Student {
     public Student withParent(String p) {
         this.parentName = p;
         return this;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -144,6 +128,50 @@ public class Student {
 
     public void setSchool(String school) {
         this.school = school;
+    }
+
+    public ArrayList<Observation> getObservationList() {
+        return observationList;
+    }
+
+    public void setObservationList(ArrayList<Observation> observationList) {
+        this.observationList = observationList;
+    }
+
+    public static GradeLevel gradeLevelFromString(String input) {
+        switch(input)
+        {
+            default:
+            case "TK":
+                return GradeLevel.TK;
+            case "K":
+                return GradeLevel.K;
+            case "Grade 1":
+                return GradeLevel.G1;
+            case "Grade 2":
+                return GradeLevel.G2;
+            case "Grade 3":
+                return GradeLevel.G3;
+            case "Grade 4":
+                return GradeLevel.G4;
+            case "Grade 5":
+                return GradeLevel.G5;
+            case "Grade 6":
+                return GradeLevel.G6;
+            case "Grade 7":
+                return GradeLevel.G7;
+            case "Grade 8":
+                return GradeLevel.G8;
+            case "Grade 9":
+                return GradeLevel.G9;
+            case "Grade 10":
+                return GradeLevel.G10;
+            case "Grade 11":
+                return GradeLevel.G11;
+            case "Grade 12":
+                return GradeLevel.G12;
+
+        }
     }
 
     public String getGradeLevelString() {

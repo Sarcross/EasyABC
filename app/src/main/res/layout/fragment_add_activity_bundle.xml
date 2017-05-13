@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <EditText
+        android:id="@+id/addActivityBundleFragment_topic_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/addActivityBundleFragment_topic_EditText" />
+    <TextView
+        android:id="@+id/addActivityBundleFragment_activity_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/addActivityBundleFragment_activity_TextView" />
+    <Spinner
+        android:id="@+id/addActivityBundleFragment_activity_Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/task_arrays" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/addActivityBundleFragment_antecedent_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addActivityBundleFragment_antecedent_TextView" />
+        <Spinner
+            android:id="@+id/addActivityBundleFragment_antecedent_Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/antecedent_arrays" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/addActivityBundleFragment_behavior_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addActivityBundleFragment_behavior_TextView" />
+        <Spinner
+            android:id="@+id/addActivityBundleFragment_behavior_Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/behavior_arrays" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/addActivityBundleFragment_consequence_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/addActivityBundleFragment_consequence_TextView" />
+        <Spinner
+            android:id="@+id/addActivityBundleFragment_consequence_Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/consequence_arrays" />
+        <EditText
+            android:id="@+id/addActivityBundleFragment_consequence_other_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/addActivityBundleFragment_consequence_other_EditText"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addActivityBundleFragment_add_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addActivityBundleFragment_add_Button"
+        android:layout_gravity="right"/>
+</LinearLayout>
